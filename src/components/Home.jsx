@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router";
 import CoffeeCard from "./CoffeeCard";
 import Banner from "./Banner";
+import { AuthContext } from "../context/AuthContext";
 
 const Home = () => {
   const initialCoffees = useLoaderData();

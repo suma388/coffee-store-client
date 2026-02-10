@@ -9,6 +9,8 @@ import Home from "./components/Home.jsx";
 import UpdateCoffee from "./components/UpdateCoffee.jsx";
 import AddCoffee from "./components/AddCoffee.jsx";
 import CoffeeDetails from "./components/CoffeeDetails.jsx";
+import AuthProvider from "./context/AuthProvider.jsx";
+import SignUp from "./components/SignUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,12 +38,18 @@ const router = createBrowserRouter([
         path: "addCoffee",
         Component: AddCoffee,
       },
+      {
+        path: "signUp",
+        Component: SignUp,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />,
+    <AuthProvider>
+      <RouterProvider router={router} />,
+    </AuthProvider>
   </StrictMode>,
 );
